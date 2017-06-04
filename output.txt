@@ -1,0 +1,1 @@
+Hi my name is colin and today I am going to print this line of text into output.txt so anyone reading this knows colin is a pro dev
