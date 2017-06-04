@@ -1,2 +1,23 @@
 var https = require('https');
+
+var  options = {
+  host: 'www.example.org',
+  path: '/',
+};
+//called by httpa when the request is made
+var callback = function(response) {
+  console.log('In response handler callback');
+  console.log('--------------');
+  response.on('data', function(chunk){
+     console.log('[-- CHUNK OF LENGTH ' + chunk.length + ' --]');
+     console.log(chunk.toString());
+  });
+}
+console.log('About to make a request');
+console.log('--------------');
+https.request(options, callback).end();
+console.log("I've made the request");
+console.log('--------------');
 console.log('I did it');
+console.log('--------------');
+
